@@ -1,0 +1,32 @@
+{
+  "facebook": {
+    "link": "https://www.facebook.com/your-facebook-page",
+    "share": "https://www.facebook.com/sharer/sharer.php?u="
+  },
+  "telegram": {
+    "link": "https://t.me/your-telegram-channel",
+    "share": "https://t.me/share/url?url="
+  },
+  "whatsapp": {
+    "link": "https://wa.me/your-whatsapp-number",
+    "share": "https://api.whatsapp.com/send?text="
+  },
+  "x": {
+    "link": "https://x.com/your-twitter-page",
+    "share": "https://x.com/intent/tweet?url="
+  },
+  "instagram": {
+    "link": "https://www.instagram.com/your-instagram-page",
+    "share": "https://www.instagram.com/your-instagram-page"
+  },
+  "youtube": {
+    "link": "https://www.youtube.com/channel/your-youtube-channel"
+  },
+  "linkedin": {
+    "link": "https://www.linkedin.com/company/your-linkedin-page",
+    "share": "https://www.linkedin.com/shareArticle?mini=true&url="
+  },
+  "tiktok": {
+    "link": "https://www.tiktok.com/@your-tiktok-page"
+  }
+}

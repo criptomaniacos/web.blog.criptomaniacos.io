@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: theme("colors.brand.black");
+  @apply text-white;
+  background-color: theme("colors.neutral.900");
   min-height: 100vh;
   min-height: 100svh;
 }

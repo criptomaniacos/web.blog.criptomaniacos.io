@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "@/styles/globals.css";
+import { Footer, Menu } from "@/components/home";
 
 const fontSora = Sora({ subsets: ["latin"] });
 
@@ -16,9 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={fontSora.className}>
-        <div>menu</div>
+      <body
+        className={`${fontSora.className} min-h-screen flex flex-col justify-between`}
+      >
+        <div className="container">
+          <Menu />
+        </div>
         {children}
+        <div className="container py-4">
+          <Footer />
+        </div>
       </body>
     </html>
   );
