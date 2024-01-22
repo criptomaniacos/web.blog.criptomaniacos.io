@@ -33,7 +33,7 @@ export default function Home() {
                 </p>
 
                 <Link
-                  href="https://use.lastra.app"
+                  href="https://plataforma.criptomaniacos.com.br/auth/cadastrar"
                   target="_blank"
                   className="flex justify-between items-center bg-brand-orange-500 rounded-full px-2 py-2  text-neutral-900 max-w-[180px]"
                 >

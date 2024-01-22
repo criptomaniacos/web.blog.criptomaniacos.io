@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div className="container py-16 lg:py-20">
-        <div className="flex ">
+        <div className="flex">
           <div className="w-1/6">
             <div className="text-sm text-neutral-500">Publicado em:</div>
             <div className="text-sm text-neutral-700">
@@ -46,19 +46,39 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </div>
             <div className="pt-6 pb-2">Compartilhe nas redes sociais</div>
             <div className="flex flex-col gap-1 text-sm">
-              <ShareLink net="x" text={post.title} Icon={FaXTwitter}>
+              <ShareLink
+                net="x"
+                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                Icon={FaXTwitter}
+              >
                 X
               </ShareLink>
-              <ShareLink net="linkedin" text={post.title} Icon={FaLinkedin}>
+              <ShareLink
+                net="linkedin"
+                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                Icon={FaLinkedin}
+              >
                 LinkedIn
               </ShareLink>
-              <ShareLink net="telegram" text={post.title} Icon={FaTelegram}>
+              <ShareLink
+                net="telegram"
+                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                Icon={FaTelegram}
+              >
                 Telegram
               </ShareLink>
-              <ShareLink net="facebook" text={post.title} Icon={FaFacebook}>
+              <ShareLink
+                net="facebook"
+                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                Icon={FaFacebook}
+              >
                 Facebook
               </ShareLink>
-              <ShareLink net="whatsapp" text={post.title} Icon={FaWhatsapp}>
+              <ShareLink
+                net="whatsapp"
+                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                Icon={FaWhatsapp}
+              >
                 Whatsapp
               </ShareLink>
             </div>

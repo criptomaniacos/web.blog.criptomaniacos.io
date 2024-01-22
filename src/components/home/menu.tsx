@@ -5,7 +5,7 @@ import { BsArrowUpRightCircleFill } from "react-icons/bs";
 export function Menu() {
   return (
     <div className="flex justify-between items-center w-full">
-      <Link href="/">
+      <Link href="https://criptomaniacos.io">
         <Image
           src="/assets/logo-cmaniaco.svg"
           alt="logo"
@@ -15,7 +15,8 @@ export function Menu() {
       </Link>
       <div>
         <Link
-          href="https://use.lastra.app"
+          href="https://plataforma.criptomaniacos.com.br/auth/cadastrar"
+          target="_blank"
           className="flex justify-between items-center rounded-full border-white border-[1px] px-2 py-2  text-white"
         >
           <span className="ml-4 mr-8">Criar Conta</span>
