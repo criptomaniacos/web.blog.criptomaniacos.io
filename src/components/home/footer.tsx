@@ -4,7 +4,7 @@ import { FiArrowUp } from "react-icons/fi";
 
 export function Footer() {
   return (
-    <div className="flex justify-between items-center w-full px-8">
+    <div className="flex flex-col md:flex-row gap-4 justify-between items-center px-8">
       <Link href="https://www.criptomaniacos.io">
         <Image
           src="/assets/logo-cmaniaco-horizon.svg"

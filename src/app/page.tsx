@@ -11,19 +11,18 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between w-full flex-1">
-      <div className="bg-neutral-950 w-full flex-1">
-        <div className="container py-16">
-          <div className="flex flex-wrap gap-4">
+    <main className="flex flex-col items-center justify-between flex-1">
+      <div className="bg-neutral-950 flex-1">
+        <div className="container py-8 md:py-16">
+          <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 gap-4 flex flex-col">
               <h2 className="border-l-8 border-orange-500 pl-4 text-2xl">
                 Últimos Posts
               </h2>
-
               <BlogListHomeUltimosPosts />
             </div>
 
-            <div className="w-full lg:w-1/4">
+            <div className="lg:w-1/4">
               <div className="bg-neutral-800 rounded-lg border border-neutral-700 p-4 flex flex-col gap-4">
                 <h3 className="text-xl ">
                   Junte-se a mais de 500k Criptomaníacos

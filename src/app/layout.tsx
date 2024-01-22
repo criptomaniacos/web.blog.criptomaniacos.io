@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={`${fontSora.className} min-h-screen flex flex-col justify-between`}
       >
-        <div className="container">
+        <div className="container py-2">
           <Menu />
         </div>
         {children}
