@@ -11,13 +11,13 @@ import {
 
 export async function BlogListHomeMaisLidas() {
   const { posts } = await ghost.getPosts({
-    limit: 2,
+    limit: 3,
     filter: "featured:true",
     fields: "id,title,slug,feature_image,published_at,custom_excerpt,excerpt",
   });
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 mb-4">
       {posts.map((post, index) => {
         return (
           <HomeBlogPostCard
@@ -25,7 +25,7 @@ export async function BlogListHomeMaisLidas() {
             slug={post.slug!}
             className="bg-transparent"
           >
-            <HomeBlogPostCardContent className="flex-row">
+            <HomeBlogPostCardContent className="flex-row py-0">
               <HomeBlogPostCardSubtitle>{index + 1}</HomeBlogPostCardSubtitle>
               <HomeBlogPostCardDescription>
                 {post.title}
