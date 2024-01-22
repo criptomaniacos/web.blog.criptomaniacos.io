@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between flex-1">
-      <div className="bg-neutral-950 flex-1">
+      <div className="bg-neutral-950 w-full flex-1">
         <div className="container py-8 md:py-16">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 gap-4 flex flex-col">
