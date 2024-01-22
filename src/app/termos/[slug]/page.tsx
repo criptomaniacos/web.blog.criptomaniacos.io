@@ -1,18 +1,10 @@
-import { FollowLink } from "@/components/atoms/FollowLink";
-import { ShareLink } from "@/components/atoms/ShareLink";
 import { ghost } from "@/lib/ghost";
 
-import {
-  FaFacebook,
-  FaLinkedin,
-  FaTelegram,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-
 export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await ghost.getPage({ slug: params.slug });
+  const post = await ghost.getPage({
+    slug: params.slug,
+    fields: "id,title,slug,published_at,html",
+  });
 
   return (
     <div className="bg-white text-neutral-800 flex-1">

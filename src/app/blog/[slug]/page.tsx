@@ -12,7 +12,13 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await ghost.getPost({ slug: params.slug });
+  const post = await ghost.getPost({
+    slug: params.slug,
+    params: {
+      fields:
+        "id,title,slug,published_at,html,reading_time,custom_excerpt,excerpt",
+    },
+  });
 
   return (
     <div className="bg-white text-neutral-800 flex-1">
