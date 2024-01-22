@@ -1,3 +1,5 @@
+import { pages } from "next/dist/build/templates/app-page";
+
 type GhostPostParamsProps = {
   filter?: string | string[];
   include?: string | string[];
@@ -110,6 +112,10 @@ type GhostPostsProps = {
   };
 };
 
+type GhostPagesProps = {
+  pages: GhostPostOrPageProps[];
+};
+
 async function getPosts(params: GhostPostParamsProps) {
   const { posts, meta }: GhostPostsProps = await ghostApi({
     path: "posts",
@@ -152,8 +158,30 @@ async function getPost({ id, slug, params }: GetPostProps) {
   return posts[0];
 }
 
+async function getPage({ id, slug, params }: any) {
+  const defaultParams = {
+    // include: ["authors", "tags"],
+    ...params,
+  };
+  if (id) {
+    const { pages }: GhostPagesProps = await ghostApi({
+      path: `pages/${id}`,
+      params: defaultParams,
+    });
+    return pages[0];
+  }
+
+  const { pages }: GhostPagesProps = await ghostApi({
+    path: `pages/slug/${slug}`,
+    params: defaultParams,
+  });
+
+  return pages[0];
+}
+
 export const ghost = {
   ghostApi,
   getPosts,
   getPost,
+  getPage,
 };

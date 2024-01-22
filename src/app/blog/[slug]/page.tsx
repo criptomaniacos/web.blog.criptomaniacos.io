@@ -34,8 +34,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div className="container py-16 lg:py-20">
-        <div className="flex">
-          <div className="w-1/6">
+        <div className="flex flex-col-reverse lg:flex-row">
+          <div className="lg:w-1/6 mb-8">
             <div className="text-sm text-neutral-500">Publicado em:</div>
             <div className="text-sm text-neutral-700">
               {new Date(post.published_at).toLocaleDateString("pt-br", {
@@ -87,12 +87,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
             className="flex-1 prose text-neutral-600 dark:text-neutral-300 "
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <div className="w-3/12">
+          <div className="lg:w-3/12 lg:p-4">
             <div className="progress-bar p-4">
               Leitura aproximada em {post.reading_time}{" "}
               {post.reading_time! > 1 ? ` minutos` : ` minuto`}
             </div>
-            <div className="flex flex-col border rounded-xl border-neutral-900 p-4">
+            <div className="hidden lg:flex flex-col border rounded-xl border-neutral-900 p-4">
               <div className="text-xl ">Últimas Postagens</div>
             </div>
             <div className="flex justify-center py-4 gap-2">
