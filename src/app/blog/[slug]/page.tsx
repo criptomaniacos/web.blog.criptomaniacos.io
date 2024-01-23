@@ -1,6 +1,7 @@
 import { FollowLink } from "@/components/atoms/FollowLink";
 import { ShareLink } from "@/components/atoms/ShareLink";
 import { ghost } from "@/lib/ghost";
+import type { Metadata, ResolvingMetadata } from "next";
 
 import {
   FaFacebook,
@@ -11,6 +12,93 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // fetch data
+  const post = await ghost.getPost({
+    slug: params.slug,
+    params: {
+      fields: [
+        "title:",
+        "slug",
+        "comment_id",
+        "feature_image",
+        "published_at",
+        "custom_excerpt",
+        "canonical_url",
+        "tags",
+        "primary_tag",
+        "url",
+        "excerpt",
+        "reading_time",
+        "og_image",
+        "og_title",
+        "og_description",
+        "twitter_image",
+        "twitter_title",
+        "twitter_description",
+        "meta_title",
+        "meta_description",
+        "email_subject",
+        "frontmatter",
+        "feature_image_alt",
+        "feature_image_caption",
+      ],
+    },
+  });
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  const meta: Metadata = {
+    title: post.meta_title || post.title,
+    description: post.meta_description || post.custom_excerpt || post.excerpt,
+    openGraph: {
+      type: "article",
+      images: [
+        {
+          url: post.og_image || post.feature_image || "",
+          width: 1200,
+          height: 630,
+          alt: post.og_title || post.feature_image_alt || "",
+        },
+        ...previousImages,
+      ],
+    },
+  };
+
+  if (post.twitter_image) {
+    meta.twitter = {
+      card: "summary_large_image",
+      creator: "@Criptomaniacos_",
+      site: post.canonical_url || "www.criptomaniacos.io",
+      description:
+        post.twitter_description || post.custom_excerpt || post.excerpt,
+      title: post.title,
+      images: [
+        {
+          url: post.twitter_image,
+          width: 1200,
+          height: 630,
+          alt: post.feature_image_alt,
+        },
+      ],
+    };
+  }
+
+  return {
+    ...meta,
+  };
+}
+
+// add metadata
 export default async function Page({ params }: { params: { slug: string } }) {
   const post = await ghost.getPost({
     slug: params.slug,
