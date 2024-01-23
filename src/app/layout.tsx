@@ -5,11 +5,6 @@ import { Footer, Menu } from "@/components/home";
 
 const fontSora = Sora({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Criptomaníacos",
-  description: "Simplificando o mundo das criptomoedas desde 2018",
-};
-
 export default function RootLayout({
   children,
 }: {

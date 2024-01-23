@@ -7,6 +7,7 @@ import { BlogListHomeMaisLidas } from "@/components/blog/blog-list-home-mais-lid
 
 export const metadata: Metadata = {
   title: "Blog da Criptomaníacos",
+  description: "Simplificando o mundo das criptomoedas desde 2018",
 };
 
 export default function Home() {
