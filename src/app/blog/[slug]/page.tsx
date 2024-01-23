@@ -14,43 +14,18 @@ import { FaXTwitter } from "react-icons/fa6";
 
 type Props = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // fetch data
   const post = await ghost.getPost({
     slug: params.slug,
     params: {
-      fields: [
-        "title:",
-        "slug",
-        "comment_id",
-        "feature_image",
-        "published_at",
-        "custom_excerpt",
-        "canonical_url",
-        "tags",
-        "primary_tag",
-        "url",
-        "excerpt",
-        "reading_time",
-        "og_image",
-        "og_title",
-        "og_description",
-        "twitter_image",
-        "twitter_title",
-        "twitter_description",
-        "meta_title",
-        "meta_description",
-        "email_subject",
-        "frontmatter",
-        "feature_image_alt",
-        "feature_image_caption",
-      ],
+      fields:
+        "id,title,slug,meta_title,meta_description,custom_excerpt,excerpt,og_image,og_title,featured_image,featured_image_alt,twitter_image,twitter_description,canonical_url",
     },
   });
 
