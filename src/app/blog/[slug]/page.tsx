@@ -68,9 +68,7 @@ export async function generateMetadata(
     };
   }
 
-  return {
-    ...meta,
-  };
+  return meta;
 }
 
 // add metadata
