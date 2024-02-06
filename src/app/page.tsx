@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between flex-1">
       <div className="bg-neutral-950 w-full bg-[url('https://m.cmania.co/blog/header-1.jpg')] bg-no-repeat bg-cover bg-top overflow-hidden">
-        <div className="container py-20 px-20 text-5xl">
+        <div className="container pt-12 lg:py-20 px-4 lg:px-20 text-4xl lg:text-5xl">
           <h1 className="hidden">Blog Criptomaníacos</h1>
           <h2>Os melhores conteúdos sobre bitcoin, criptomoedas e liberdade</h2>
           <BlogCategoryIndexCarousel />

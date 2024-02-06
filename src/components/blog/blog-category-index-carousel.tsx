@@ -12,7 +12,10 @@ export async function BlogCategoryIndexCarousel() {
   return (
     <div className="text-white cursor-grab active:cursor-grabbing">
       <Carousel opts={{ dragFree: true }}>
-        <CarouselContent className="text-xl p-4 flex gap-4" showOverflow>
+        <CarouselContent
+          className="text-sm lg:text-xl p-4 flex gap-4 items-center"
+          showOverflow
+        >
           {tags.map((tag) => (
             <CarouselItem
               key={tag.id}
