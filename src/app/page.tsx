@@ -4,11 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { BlogListHomeUltimosPosts } from "@/components/blog/blog-list-home-ultimos-posts";
 import { BlogListHomeMaisLidas } from "@/components/blog/blog-list-home-mais-lidas";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+
 import { BlogCategoryIndexCarousel } from "@/components/blog/blog-category-index-carousel";
 
 export const metadata: Metadata = {

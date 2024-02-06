@@ -23,9 +23,9 @@ export async function BlogListHomeUltimosPosts() {
             {post.feature_image && (
               <HomeBlogPostCardThumbnail
                 alt={`Imagem do post ${post.title}`}
-                height={400}
+                height={9 * 18}
                 src={post.feature_image}
-                width={400}
+                width={16 * 18}
               />
             )}
             <HomeBlogPostCardContent>
