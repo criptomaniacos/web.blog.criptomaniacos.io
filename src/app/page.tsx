@@ -4,6 +4,12 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { BlogListHomeUltimosPosts } from "@/components/blog/blog-list-home-ultimos-posts";
 import { BlogListHomeMaisLidas } from "@/components/blog/blog-list-home-mais-lidas";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { BlogCategoryIndexCarousel } from "@/components/blog/blog-category-index-carousel";
 
 export const metadata: Metadata = {
   title: "Blog da Criptomaníacos",
@@ -13,6 +19,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between flex-1">
+      <div className="bg-neutral-950 w-full bg-[url('https://m.cmania.co/blog/header-1.jpg')] bg-no-repeat bg-cover bg-top overflow-hidden">
+        <div className="container py-20 px-20 text-5xl">
+          <h1 className="hidden">Blog Criptomaníacos</h1>
+          <h2>Os melhores conteúdos sobre bitcoin, criptomoedas e liberdade</h2>
+          <BlogCategoryIndexCarousel />
+        </div>
+      </div>
       <div className="bg-neutral-950 w-full flex-1">
         <div className="container py-8 md:py-16">
           <div className="flex flex-col md:flex-row gap-4">

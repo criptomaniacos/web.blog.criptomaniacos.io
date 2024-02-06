@@ -14,7 +14,7 @@ const HomeBlogPostCard = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "rounded-lg border border-neutral-800 bg-neutral-900 text-neutral-100 shadow-sm transition-transform transform hover:scale-[1.02] flex flex-col lg:flex-row",
+        "rounded-lg border border-neutral-800 bg-neutral-900 text-neutral-100 shadow-sm transition-transform transform hover:scale-[1.02] flex flex-col lg:flex-row lg:items-center",
         className
       )}
       {...props}
@@ -34,10 +34,7 @@ const HomeBlogPostCardThumbnail = React.forwardRef<
 >(({ className, src, width, height, alt, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      "flex-shrink-0 w-[auto] h-[219px] rounded-lg overflow-hidden",
-      className
-    )}
+    className={cn("flex-shrink-0 rounded-lg overflow-hidden", className)}
     {...props}
   >
     <Image
