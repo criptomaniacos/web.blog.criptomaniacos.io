@@ -79,10 +79,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   });
 
   return (
-    <div className="bg-white  flex-1">
-      <div className="bg-neutral-800">
-        <div className="container  py-12 lg:py-16 flex flex-col gap-4">
-          <h1 className="text-3xl font-semibold tracking-tight text-neutral-100 sm:text-4xl">
+    <div className="bg-white flex-1">
+      <div className="bg-neutral-800 text-neutral-100">
+        <div className="container py-12 lg:py-16 flex flex-col gap-4">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {post.title}
           </h1>
           <p className="text-neutral-300 text-lg">
@@ -103,7 +103,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div className="container py-16 lg:py-20">
-        <div className="flex flex-col-reverse lg:flex-row">
+        <div className="flex flex-col-reverse lg:flex-row text-neutral-900">
           <div className="lg:w-1/6 mb-8">
             <div className="text-sm text-neutral-500">Publicado em:</div>
             <div className="text-sm text-neutral-700">
