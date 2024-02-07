@@ -1,6 +1,7 @@
 import { BlogListLimitedIndex } from "@/components/blog/blog-list-limited-index";
 import { GhostTagParamsProps, ghost } from "@/lib/ghost";
 import { Metadata } from "next";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -72,6 +73,13 @@ export default async function Page({
         <div className="container py-12">
           <h1 className="text-5xl">{tag.meta_title || tag.name}</h1>
           <p>{tag.description}</p>
+          <div className="flex gap-2 text-sm mt-8">
+            <Link href="/">Início</Link>
+            <span>/</span>
+            <Link href="/blog">Blog</Link>
+            <span>/</span>
+            <span>{tag.name}</span>
+          </div>
         </div>
       </div>
       <div className="container py-12">

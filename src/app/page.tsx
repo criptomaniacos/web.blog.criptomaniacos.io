@@ -30,6 +30,13 @@ export default function Home() {
                 Últimos Posts
               </h2>
               <BlogListHomeUltimosPosts />
+              {/* veja mais button to sent to /blog page */}
+              <Link
+                href="/blog"
+                className="text-brand-orange-500 hover:underline"
+              >
+                Ver mais postagens
+              </Link>
             </div>
 
             <div className="lg:w-1/4">

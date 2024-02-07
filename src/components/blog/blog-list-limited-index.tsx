@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/pagination";
 
 type BlogListLimitedIndexProps = {
-  slug: string;
+  slug?: string;
   page?: number;
   limit?: number;
   params?: GhostPostParamsProps;
@@ -71,7 +71,7 @@ export async function BlogListLimitedIndex({
         <PaginationContent>
           {page > 1 && (
             <PaginationItem>
-              <PaginationPrevious href={`${slug}?page=${page - 1}`}>
+              <PaginationPrevious href={`${slug || "blog"}?page=${page - 1}`}>
                 Anterior
               </PaginationPrevious>
             </PaginationItem>
@@ -85,7 +85,7 @@ export async function BlogListLimitedIndex({
           </PaginationItem> */}
           {page < (Number(meta?.pagination.pages) || 1) && (
             <PaginationItem>
-              <PaginationNext href={`${slug}?page=${page + 1}`}>
+              <PaginationNext href={`${slug || "blog"}?page=${page + 1}`}>
                 Próxima
               </PaginationNext>
             </PaginationItem>

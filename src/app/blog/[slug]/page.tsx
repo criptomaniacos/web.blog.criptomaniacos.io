@@ -2,6 +2,7 @@ import { FollowLink } from "@/components/atoms/FollowLink";
 import { ShareLink } from "@/components/atoms/ShareLink";
 import { ghost } from "@/lib/ghost";
 import type { Metadata, ResolvingMetadata } from "next";
+import Link from "next/link";
 
 import {
   FaFacebook,
@@ -71,13 +72,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const post = await ghost.getPost({
     slug: params.slug,
     params: {
+      include: "tags",
       fields:
-        "id,title,slug,published_at,html,reading_time,custom_excerpt,excerpt",
+        "id,title,slug,published_at,html,reading_time,custom_excerpt,excerpt,primary_tag",
     },
   });
 
   return (
-    <div className="bg-white text-neutral-800 flex-1">
+    <div className="bg-white  flex-1">
       <div className="bg-neutral-800">
         <div className="container  py-12 lg:py-16 flex flex-col gap-4">
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-100 sm:text-4xl">
@@ -92,6 +94,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
               month: "long",
               day: "numeric",
             })}
+          </div>
+          <div className="flex gap-2 text-sm mt-4">
+            <Link href="/">Início</Link>
+            <span>/</span>
+            <Link href="/blog">Blog</Link>
           </div>
         </div>
       </div>

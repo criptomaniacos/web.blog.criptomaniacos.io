@@ -49,7 +49,7 @@ const PaginationLink = ({
   href,
   ...props
 }: PaginationLinkProps) => (
-  <Link href={href} passHref>
+  <Link href={href} passHref legacyBehavior>
     <a
       aria-current={isActive ? "page" : undefined}
       className={cn(
