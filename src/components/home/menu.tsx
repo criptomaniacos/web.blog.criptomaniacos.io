@@ -15,7 +15,7 @@ export function Menu() {
       </Link>
       <div>
         <Link
-          href="https://plataforma.criptomaniacos.com.br/auth/cadastrar"
+          href="https://hotmart.com/pt-br/club/criptomaniacos?from=HomePage"
           target="_blank"
           className="flex justify-between items-center rounded-full border-white border-[1px] px-2 py-2  text-white"
         >
